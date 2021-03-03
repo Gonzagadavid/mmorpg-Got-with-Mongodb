@@ -1,0 +1,84 @@
+.body-index{
+	background: #010101;
+}
+
+.body-jogo{
+	background-image: url('../images/mapa.gif');
+	background-position: center;
+}
+
+.form-entrar {
+	padding-top: 10px;
+}
+
+.form-cadastro {
+	color: #fff;
+}
+
+.form-cadastro img{
+	margin: 0 auto;
+}
+
+.sair {
+	padding-top: 10px;
+}
+
+.barra-superior {
+	background-color: #fff;
+	padding:15px;
+	opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+.barra-superior {
+	text-align:center;
+}
+
+.barra-superior span{
+	display: block;
+	width: 100%;
+	font-weight: bold;
+}
+
+.barra-inferior {
+    position: absolute;
+    bottom: 0;
+	width:100%;
+	text-align:center;
+    height: auto;
+	padding:15px;
+    background-color: #fff;
+	opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+.barra-inferior span{
+	display: block;
+	width: 100%;
+	font-weight: bold;
+}
+
+.acoes{
+	background-color: #fff;
+	opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+	padding:15px;
+}
+
+.acoes span{
+	color: #333333;
+}
+
+#pergaminhos{
+	max-height: 180px;
+	overflow: auto;
+}
+
+.casa span{
+	margin-top:-20px;
+	margin-left:10px;
+	display: block;
+	font-weight: bold;
+	color:#fff;
+	font-size: 15px;
+}

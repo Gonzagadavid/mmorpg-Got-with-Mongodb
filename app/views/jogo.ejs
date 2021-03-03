@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>MMORPG - Game of Thrones</title>
+		
+		<!-- JQuery -->
+		<script src="js/jquery-2.2.1.js"></script>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+		<!-- incluindo css -->
+		<link href="css/style.css" rel="stylesheet">
+
+	</head>
+
+	<body class="body-jogo">
+
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="form-group sair">
+					<button type="button" class="btn btn-info pull-right" id="btn_sair">Sair</button>
+				</div>
+			</div>
+		</nav>
+
+	    <div class="container">
+
+			<% if (msg === 'A') { %>
+				<div class="alert alert-danger" id="msg">
+          <strong>Operação inválida!</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">X</button>	
+					<% for(let i = 0; i < campos.length; i++) { %>
+						<ul>
+							<li><%= campos[i].msg %></li>
+						</ul>
+					<% } %>
+				</div>
+			<% } %>		
+		
+			<% if (msg === 'B') { %>
+				<div class="alert alert-info" id="msg">
+          <strong>Ação realizada com sucesso!</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">X</button>	
+				</div>
+			<% } %>		
+		
+			<% if (msg === 'C') { %>
+				<div class="alert alert-info" id="msg">
+          <strong>Senhor(a), a tarefa ordenada foi finalizada!</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">X</button>	
+				</div>
+			<% } %>		
+		
+			<% if (msg === 'D') { %>
+				<div class="alert alert-info" id="msg">
+          <strong>Senhor(a), sua ordem foi revogada!</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">X</button>	
+				</div>
+			<% } %>		
+		
+			<% if (msg === 'E') { %>
+				<div class="alert alert-danger" id="msg">
+          <strong>Senhor(a), suas moedas são insuficiente!</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">X</button>	
+				</div>
+			<% } %>		
+		
+			<% if (msg === 'F') { %>
+				<div class="alert alert-danger" id="msg">
+          <strong>Senhor(a), não há suditos o suficiente!</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">X</button>	
+				</div>
+			<% } %>		
+		
+			<% if (msg === 'G') { %>
+				<div class="alert alert-info" id="msg">
+          <strong>Senhor(a), seus recursos foram atualizados!</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" id="btn-close">X</button>	
+				</div>
+			<% } %>		
+	    	
+			<div class="row">
+	    		<div class="col-sm-3 casa">
+					<img src="images/casa_<%=imgCasa%>.jpg" />
+				</div>
+
+	    		<div class="col-sm-9">
+					<div class="row barra-superior">
+						<div class="col-sm-2"> 
+							<img src="images/habilidades/temor.jpg" title="Temor" alt="Temor" />
+							<span><%= jogo.temor %></span>
+						</div>
+						
+						<div class="col-sm-2"> 
+							<img src="images/habilidades/sabedoria.jpg" title="Sabedoria" alt="Sabedoria"/>
+							<span><%= jogo.sabedoria %></span>
+						</div>
+						
+						<div class="col-sm-2"> 
+							<img src="images/habilidades/comercio.jpg" title="Comércio" alt="Comércio"/>
+							<span><%= jogo.comercio %></span>
+						</div>
+						
+						<div class="col-sm-2"> 
+							<img src="images/habilidades/magia.jpg" title="Magia" alt="Magia"/>
+							<span><%= jogo.magia %></span>
+						</div>
+					</div>
+				</div>
+	    	</div>
+			
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-9">
+					<div class="acoes" id="acoes">Senhor(a), o que deseja fazer hoje?</div>					
+				</div>
+			</div>
+			
+		</div>	
+		
+		<div class="barra-inferior">
+			<div class="container">
+			
+				<div class="row">
+					<div class="col-sm-1">
+						<img src="images/outros/suditos.jpg" title="Aldeões" alt="Aldeões" id="btn-suditos"/>
+						<span><%= jogo.suditos %></span>
+					</div>
+					
+					<div class="col-sm-1">
+						<img src="images/outros/pergaminho.jpg" title="Pergaminhos" alt="Pergaminhos" id="btn-pergaminho"/>
+					</div>
+					
+					<div class="col-sm-8"></div>
+					
+					<div class="col-sm-2">
+						<img src="images/outros/moeda.jpg" title="Moeda" alt="Moeda"/>
+						<span><%= jogo.moeda %></span>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const sair = document.getElementById('btn_sair')
+			const suditos = document.getElementById('btn-suditos')
+			const pergaminho = document.getElementById('btn-pergaminho')
+			const acoes = document.getElementById('acoes')
+			const msg = document.getElementById('msg')
+			const tempoRestante = document.getElementsByClassName('tempoRestante')
+			
+			sair.addEventListener('click', e => {
+				window.location.href = '/sair'
+			})
+			
+			suditos.addEventListener('click', e => {
+				fetch('/suditos')
+				.then(res => res.text())
+				.then(res => acoes.innerHTML = res)
+				if(msg) msg.style.display = 'none'
+			})
+			
+			let timeId = null
+			pergaminho.addEventListener('click', e => {
+				fetch('/pergaminhos')
+				.then(res => res.text())
+				.then(res => acoes.innerHTML = res)
+				clearTimeout(timeId)
+				cronometro()
+				if(msg) msg.style.display = 'none'
+			})
+			
+			if (msg) {
+				const btnClose = document.getElementById('btn-close')
+				btnClose.addEventListener('click', e => msg.style.display = 'none')
+			}
+
+			function cronometro () {
+				const atual = Math.round(new Date().getTime())
+				for (let i = 0; i < tempoRestante.length; i++) {
+					const segundo =	tempoRestante[i].innerHTML -= 1
+					if (segundo <= 0) window.location.href = '/jogo?msg=C'
+					tempoRestante[i] = segundo
+				}
+
+				timeId = setTimeout(cronometro, 1000)
+			}
+
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<div id="aldecoes">					
+	<h3>Aldeões</h3>
+	
+	<form class="form-cadastro" action="/ordenar_acao_sudito" method="POST">
+
+		<div class="row">
+			<div class="col-xs-5">
+				<div class="form-group">
+					<select class="form-control" name="acao">
+						<option value="">-- Escolha a ação</option>
+						<option value="1">Coletar recursos (2G e 1H)</option>
+						<option value="2">Enforcar aldeão (3G e 2H)</option>
+						<option value="3">Ensinar história (1G e 5H)</option>
+						<option value="4">Ensinar magia (1G e 5H)</option>
+					</select>										
+				</div>
+			</div>
+			
+			<div class="col-xs-3">
+				<div class="form-group">
+					<input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade">									
+				</div>
+			</div>
+			
+			<div class="col-xs-4">
+				<div class="form-group row">
+					<button type="submit" class="btn btn-primary">Ordenar</button>
+				</div>
+			</div>
+			
+		</div>
+		
+		<hr />
+		<div class="row">
+			<div class="col-xs-12">
+				<span>Senhor, você possui <%= disponiveis %> aldeões desocupados e <%= ocupados %> aldeões em atividade.</span>
+			</div>
+		</div>
+	</form>
+</div>

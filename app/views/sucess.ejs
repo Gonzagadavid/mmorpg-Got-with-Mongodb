@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>MMORPG - Game of Thrones</title>
+		
+		<!-- JQuery -->
+		<script src="js/jquery-2.2.1.js"></script>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+		<!-- incluindo css -->
+		<link href="css/style.css" rel="stylesheet">
+
+	</head>
+
+	<body class="body-index">
+
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<form class="form-inline form-entrar">
+					<div class="form-group">				
+						<button type="button" class="btn btn-success" id="voltar">Inicio</button>
+					</div>
+				</form>
+			</div>
+			
+		</nav>
+
+	    <div class="container">			
+				<div class="alert alert-info">
+					<strong>Parabéns, sua conta foi criada com sucesso!</strong>
+				</div>
+	    	<div class="row">
+	    		<div class="col-md-2"></div>
+
+	    		<div class="col-md-8">
+					<img src="images/game_of_thrones_logo.jpg" />
+				</div>
+
+	    		<div class="col-md-2"></div>
+		    	</div>
+	    	</div>
+	    </div>	
+			<script>
+        const voltar = document.getElementById('voltar')
+  
+        voltar.addEventListener('click', e => {
+          window.location.href = '/'
+        })
+      </script>	
+	</body>
+</html>
