@@ -10,10 +10,7 @@ module.exports.autenticar = function (application, errors, req, res) {
     return
   }
 
-  // const connection = application.config.dbConnection
   // auteticar usuarios
   const usuariosDAO = new application.app.models.UsuariosDAO()
   usuariosDAO.autenticar(dadosForm, req, res)
-
-  // res.send('tudo certo')
 }

@@ -2,10 +2,6 @@ const MongoClient = require('mongodb').MongoClient
 const url = 'mongodb://localhost:27017/'
 
 class UsuariosDAO {
-  // constructor (connection) {
-  //   this._connection = connection()
-  // }
-
   inserirUsuario (usuario) {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, db) => {
       if (err) throw err
