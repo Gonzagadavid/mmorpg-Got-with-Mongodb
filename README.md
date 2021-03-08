@@ -1,6 +1,7 @@
 # MMORPG Game of Thrones :european_castle: :dragon: 
 
-Projeto desenvolvido para interatividade do usuário em uma aplicação através de um cadastramento, e evolução dos dados de acordo com a interação, sendo armazenados em um banco de dados (MongoDB)
+Projeto desenvolvido para interatividade do usuário em uma aplicação através de um cadastramento, e evolução dos dados de acordo com a interação, sendo armazenados em um banco de dados (MongoDB) com a
+senha criptografada em hash(md5).
 
 ### Este projeto foi desenvolvido utilizando:
 
@@ -11,6 +12,7 @@ Projeto desenvolvido para interatividade do usuário em uma aplicação através
 - Body-parser;
 - Express-validator;
 - MongoDB
+- Crypto
 - Padrão MVC
 
 ### Para visualizar o projeto em andamento:
