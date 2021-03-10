@@ -5,7 +5,7 @@ const express = require('express')
 const consign = require('consign')
 
 /* importar o módulo do body-parser */
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 
 /* importar o módulo do express-session */
 const expressSession = require('express-session')
@@ -21,7 +21,8 @@ app.set('views', './app/views')
 app.use(express.static('./app/public'))
 
 /* configurar o middleware body-parser */
-app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }))
 
 /* configurar o middleware express-session */
 app.use(expressSession({
