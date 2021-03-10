@@ -9,7 +9,6 @@ senha criptografada em hash(md5).
 - Express;
 - EJS;
 - Consign;
-- Body-parser;
 - Express-validator;
 - MongoDB
 - Crypto
